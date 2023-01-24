@@ -33,7 +33,7 @@ def commit_changes():
 # setup_table()
 
 # create_order("George", "Small", "Marshmallows, Vanilla", 4.10)
-print(view_all_records())
+# print(view_all_records())
 
 conn.commit()
 

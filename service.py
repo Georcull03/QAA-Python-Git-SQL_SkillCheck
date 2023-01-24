@@ -15,14 +15,15 @@ def read_by_id(id):
 def create_order(customer_name, drink_size, extras, price):
     query = f"INSERT INTO orders (customer_name, drink_size, extras, price) VALUES ('{customer_name}', '{drink_size}', '{extras}', {price});"
     db.run_query(query)
-    return True
+    return 'Order created'
 
 def update_order(field, value, id):
-    if value == str():
+    if isinstance(value, str):
         query = f"UPDATE orders SET {field} = '{value}' WHERE order_id = {id};"
-    query = f"UPDATE orders SET {field} = {value} WHERE order_id = {id};"
+    else:
+        query = f"UPDATE orders SET {field} = {value} WHERE order_id = {id};"
     db.run_query(query)
-    return True
+    return 'Order updated'
 
 def delete_order(id):
     query = f'DELETE FROM orders WHERE order_id = {id};'
