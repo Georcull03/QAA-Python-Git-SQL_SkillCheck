@@ -4,4 +4,4 @@
 # Not a complete function, but a suggestion of what to do
 def read_by_id(id):
     order_data = db.query(id)
-    order = order(order_data) 
+    order = order(order_data)
