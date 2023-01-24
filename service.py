@@ -28,9 +28,9 @@ def update_order(field, value, id):
 def delete_order(id):
     query = f'DELETE FROM orders WHERE order_id = {id};'
     db.run_query(query)
-    return True
+    return 'Order deleted'
 
 def delete_all():
     query = 'DELETE FROM orders WHERE order_id > 0;'
     db.run_query(query)
-    return True
+    return 'All orders deleted'

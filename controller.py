@@ -21,9 +21,9 @@ def start_app():
         elif choice == 4:
             print(update_an_order())
         elif choice == 5:
-            print(delete_order())
+            print(delete_an_order())
         elif choice == 6:
-            print(delete_all())
+            print(delete_orders())
         else:
             exit = True
             db.commit_changes()
@@ -47,6 +47,13 @@ def update_an_order():
     replacement_value = input('Please enter data: ')
     id = input('Please enter the order id you would like to update: ')
     return update_order(column, replacement_value, id)
+
+def delete_an_order():
+    id = input('Please enter an order id to delete that order: ')
+    return delete_order(id)
+
+def delete_orders():
+    return delete_all()
 
 start_menu = """
     Welcome to the QA Cafe, what would you like to do? 
