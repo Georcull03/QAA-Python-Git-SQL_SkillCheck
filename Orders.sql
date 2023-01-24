@@ -7,4 +7,4 @@ CREATE TABLE IF NOT EXISTS orders (
 )
 
 INSERT INTO orders (customer_name, drink_size, price) VALUES ('Jerry', 'Medium', 6.50);
-INSERT INTO orders (fish_eaten, penguin_name) VALUES ('Rebecca', 'Large', 'Whipped cream, Marshmallows');
+INSERT INTO orders (fish_eaten, penguin_name) VALUES ('Rebecca', 'Large', 'Whipped cream, Marshmallows', 9.00);
