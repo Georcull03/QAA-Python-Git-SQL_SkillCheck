@@ -17,7 +17,19 @@ def create_order(customer_name, drink_size, extras, price):
     db.run_query(query)
     return True
 
+def update_order(field, value, id):
+    if value == str():
+        query = f"UPDATE orders SET {field} = '{value}' WHERE order_id = {id};"
+    query = f"UPDATE orders SET {field} = {value} WHERE order_id = {id};"
+    db.run_query(query)
+    return True
+
 def delete_order(id):
-    query = f'DELETE FROM orders WHERE order id = {id}'
+    query = f'DELETE FROM orders WHERE order_id = {id};'
+    db.run_query(query)
+    return True
+
+def delete_all():
+    query = 'DELETE FROM orders WHERE order_id > 0;'
     db.run_query(query)
     return True
